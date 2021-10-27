@@ -1,0 +1,20 @@
+{
+  "name": "node_api_mysql",
+  "version": "1.0.0",
+  "description": "```\r npm init -y \r npm install express express-validator mysql body-parser jsonwebtoken bcryptjs cors --save\r npm i -D nodemon\r npm install -g nodemon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx nodemon server/server.js -w server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  }
+}
