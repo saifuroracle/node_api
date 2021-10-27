@@ -1,6 +1,6 @@
 const mysql = require('mysql');
 
-mysql.createPool({
+const pool = mysql.createPool({
     connectionLimit: 10,
     user: 'root',
     password: 'root',
@@ -13,7 +13,7 @@ let db = {};
 
 db.all = () => {
     return new Promise((resolve, reject)=>{
-        pool.query(`select * from node_app`, (err, results) => {
+        pool.query(`SELECT * FROM node_app`, (err, results) => {
             if (err) {
                 return reject(err)
             }
