@@ -13,7 +13,7 @@ let db = {};
 
 db.all = () => {
     return new Promise((resolve, reject)=>{
-        pool.query(`SELECT * FROM node_app`, (err, results) => {
+        pool.query(`SELECT * FROM users`, (err, results) => {
             if (err) {
                 return reject(err)
             }
