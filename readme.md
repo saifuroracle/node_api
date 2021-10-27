@@ -14,12 +14,6 @@ in package.json
 npm run dev
 ```
 
-## git
-```
-.gitignore
-git rm -r --cached node_modules
-git commit -m "removing node_modules"
-```
 
 ## mysql code (not used)
 ```
@@ -38,6 +32,11 @@ CREATE TABLE users (
 
 ```
 
+
+## to run
+```
+npm install
+```
 
 
 ## resources
