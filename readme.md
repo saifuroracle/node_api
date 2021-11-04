@@ -40,6 +40,5 @@ npm install
 
 
 ## resources
-* https://www.tutsmake.com/node-js-express-mysql-user-authentication-rest-api-example/ 
-  * not working
+* https://www.youtube.com/watch?v=LVfH5FDOa3o&t=181s 
 * 
