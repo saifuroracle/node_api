@@ -1,12 +1,12 @@
-const mysql = require('mysql');
+const {createPool} = require('mysql');
 
-const pool = mysql.createPool({
-    connectionLimit: 10,
+const pool = createPool({
     user: 'root',
     password: 'root',
     database: 'node_app',
     host: 'localhost',
-    port: '3306'
+    port: '3306',
+    connectionLimit: 10,
 })
 
 let db = {};
