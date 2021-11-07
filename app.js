@@ -1,13 +1,13 @@
-require('dotenv').config();
-const express = require('express')
-const apiRouter = require('./routes')
-
+const express = require('express');
 const app = express()
 
-app.use(express.json())
+app.get("/api", (req, res)=>{
+    res.json({
+        success: 1,
+        message: "this is a message"
+    })
+})
 
-app.use('/api/v1/users', apiRouter)
-
-app.listen(process.env.PORT || '3000' , () => {
-    console.log(`server running on port ${process.env.PORT || '3000'}`);
+app.listen(3000, ()=>{
+    console.log("Server up & running");
 })
