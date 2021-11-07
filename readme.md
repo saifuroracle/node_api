@@ -30,6 +30,16 @@ CREATE TABLE users (
 
  INSERT INTO `node_app`.`users` (`name`, `email`, `password`) VALUES ('saifur', 'admin@gmail.com', '12345678');
 
+
+CREATE TABLE `customers` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `active` tinyint(1) DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+
 ```
 
 
