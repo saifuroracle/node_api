@@ -8,14 +8,12 @@ module.exports = app => {
     app.post("/api/v1/customers/getAllCustomers", customers.findAll);
   
     // Retrieve a single Customer with customerId
-    app.post("/api/v1/customers/:customerId", customers.findOne);
+    app.post("/api/v1/customers/getSingleCustomer", customers.findOne);
   
     // Update a Customer with customerId
-    app.post("/api/v1/customers/:customerId", customers.update);
+    app.post("/api/v1/customers/updateCustomer", customers.update);
   
     // Delete a Customer with customerId
-    app.post("/api/v1/customers/:customerId", customers.delete);
+    app.post("/api/v1/customers/deleteCustomer", customers.delete);
   
-    // Create a new Customer
-    app.post("/api/v1/customers", customers.deleteAll);
 };

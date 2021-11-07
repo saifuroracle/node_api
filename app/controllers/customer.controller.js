@@ -42,15 +42,16 @@ exports.findAll = (req, res) => {
 
 // Find a single Customer with a customerId
 exports.findOne = (req, res) => {
-    Customer.findById(req.params.customerId, (err, data) => {
+    console.log('req.body.id', req.body.id);
+    Customer.findById(req.body.id, (err, data) => {
       if (err) {
         if (err.kind === "not_found") {
           res.status(404).send({
-            message: `Not found Customer with id ${req.params.customerId}.`
+            message: `Not found Customer with id ${req.body.id}.`
           });
         } else {
           res.status(500).send({
-            message: "Error retrieving Customer with id " + req.params.customerId
+            message: "Error retrieving Customer with id " + req.body.id
           });
         }
       } else res.send(data);
@@ -67,17 +68,17 @@ exports.update = (req, res) => {
     }
   
     Customer.updateById(
-      req.params.customerId,
+      req.body.id,
       new Customer(req.body),
       (err, data) => {
         if (err) {
           if (err.kind === "not_found") {
             res.status(404).send({
-              message: `Not found Customer with id ${req.params.customerId}.`
+              message: `Not found Customer with id ${req.body.id}.`
             });
           } else {
             res.status(500).send({
-              message: "Error updating Customer with id " + req.params.customerId
+              message: "Error updating Customer with id " + req.body.id
             });
           }
         } else res.send(data);
@@ -87,29 +88,18 @@ exports.update = (req, res) => {
 
 // Delete a Customer with the specified customerId in the request
 exports.delete = (req, res) => {
-    Customer.remove(req.params.customerId, (err, data) => {
+    Customer.remove(req.body.id, (err, data) => {
       if (err) {
         if (err.kind === "not_found") {
           res.status(404).send({
-            message: `Not found Customer with id ${req.params.customerId}.`
+            message: `Not found Customer with id ${req.body.id}.`
           });
         } else {
           res.status(500).send({
-            message: "Could not delete Customer with id " + req.params.customerId
+            message: "Could not delete Customer with id " + req.body.id
           });
         }
       } else res.send({ message: `Customer was deleted successfully!` });
     });
 };
 
-// Delete all Customers from the database.
-exports.deleteAll = (req, res) => {
-    Customer.removeAll((err, data) => {
-      if (err)
-        res.status(500).send({
-          message:
-            err.message || "Some error occurred while removing all customers."
-        });
-      else res.send({ message: `All Customers were deleted successfully!` });
-    });
-};
