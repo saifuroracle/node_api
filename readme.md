@@ -40,5 +40,6 @@ npm install
 
 
 ## resources
-* https://www.youtube.com/watch?v=LVfH5FDOa3o&t=181s 
+* https://dev.to/tienbku/node-js-crud-operation-with-mysql-example-1gme
+* https://www.bezkoder.com/node-js-rest-api-express-mysql/ 
 * 
