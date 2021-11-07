@@ -1,11 +1,11 @@
 const {createPool} = require('mysql');
 
 const pool = createPool({
-    port: 3306,
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "test",
+    port: process.env.DB_PORT,
+    host: process.env.DB_HOST,
+    user: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.node_api,
     connectionLimit: 10,
 })
 
