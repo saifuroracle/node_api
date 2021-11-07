@@ -2,6 +2,7 @@ const Customer = require("../models/customer.model.js");
 
 // Create and Save a new Customer
 exports.create = (req, res) => {
+    console.log(req.body);
     // Validate request
     if (!req.body) {
       res.status(400).send({
