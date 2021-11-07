@@ -8,6 +8,7 @@ const Customer = function(customer) {
 };
 
 Customer.create = (newCustomer, result) => {
+    console.log(newCustomer);
   sql.query("INSERT INTO customers SET ?", newCustomer, (err, res) => {
     if (err) {
       console.log("error: ", err);

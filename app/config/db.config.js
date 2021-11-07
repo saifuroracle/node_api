@@ -2,5 +2,5 @@ module.exports = {
     HOST: 'localhost',
     USER:  'root',
     PASSWORD:  'root',
-    DB:  'node_api'
+    DB:  'node_app'
 };
